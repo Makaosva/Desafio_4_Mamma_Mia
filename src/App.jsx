@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import NavbarPizza from "./components/NavbarPizza";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   const [pizzas, setPizzas] = useState([]);
@@ -16,6 +18,7 @@ const App = () => {
 
   return (
     <div>
+      <NavbarPizza />
       <h1>App</h1>
       <pre>{JSON.stringify(pizzas, null, 2)}</pre>
     </div>
