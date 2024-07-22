@@ -16,7 +16,12 @@ body {
   color: #fff;
   width: 100%;
 }
+
 .linea {
   color: white;
   width: 500px;
+}
+
+.cardPizza {
+  margin: 10px 80px;
 }

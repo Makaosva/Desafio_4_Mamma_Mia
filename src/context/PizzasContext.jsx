@@ -1,40 +1,43 @@
 import { createContext, useState, useEffect } from "react";
 
-export const MyContext = createContext();
+export const PizzasContext = createContext();
 
-const PizzasJson = "/pizzas.json";
+// const PizzasJson = "/pizzas.json";
 
-const CounterProvider = ({ children }) => {
+const PizzasProvider = ({ children }) => {
   const [pizzas, setPizzas] = useState([]);
   const [carrito, setCarrito] = useState([]);
 
   // El archivo pizzas.json se encuentra en la carpeta public
   const getPizzas = async () => {
-    const response = await fetch(PizzasJson);
-    const data = await response.json();
+    const res = await fetch("/pizzas.json");
+    const data = await res.json();
     setPizzas(data);
   };
+
+  console.log("pizzas en Context-->", pizzas);
 
   useEffect(() => {
     getPizzas();
   }, []);
 
   const addPizzaToCard = ({ id, img, name, price }) => {
-    const encontrarProducto = carrito.findIndex((p) => p.id === id);
     const producto = { id, img, name, price, count: 1 };
+    const encontrarProducto = carrito.findIndex((p) => p.id === id);
 
     if (encontrarProducto >= 0) {
       carrito[encontrarProducto].count++;
       setCarrito([...carrito]);
     } else {
+      producto.count = 1;
       setCarrito([...carrito, producto]);
     }
   };
 
-  const increment = (i) => {
-    carrito[i].count++;
-    setCarrito([...carrito]);
-  };
+  // const increment = (i) => {
+  //   carrito[i].count++;
+  //   setCarrito([...carrito]);
+  // };
 
   const removePizzaToCard = (i) => {
     const { count } = carrito[i];
@@ -49,15 +52,26 @@ const CounterProvider = ({ children }) => {
   const globalStates = {
     pizzas,
     carrito,
-    increment,
+    // increment,
     addPizzaToCard,
     removePizzaToCard,
     getPizzas,
   };
 
   return (
-    <MyContext.Provider values={globalStates}>{children}</MyContext.Provider>
+    // <PizzasContext.Provider value={{ globalStates }}>
+    <PizzasContext.Provider
+      value={{
+        pizzas,
+        carrito,
+        addPizzaToCard,
+        removePizzaToCard,
+        getPizzas,
+      }}
+    >
+      {children}
+    </PizzasContext.Provider>
   );
 };
 
-export default CounterProvider;
+export default PizzasProvider;

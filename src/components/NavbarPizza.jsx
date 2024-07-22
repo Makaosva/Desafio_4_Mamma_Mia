@@ -1,7 +1,7 @@
 import { Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import MyContext from "../context/MyContext";
+import MyContext from "../context/PizzasContext";
 
 function NavbarPizza() {
   //   const { price } = useContext(MyContext);
