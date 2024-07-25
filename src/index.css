@@ -4,11 +4,11 @@ body {
 }
 
 .bannerHome {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("/bannerpizza.jpg");
   background-size: cover;
   background-position: center;
-  height: 200px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,5 +23,20 @@ body {
 }
 
 .cardPizza {
-  margin: 10px 80px;
+  margin: 40px 150px;
+}
+
+.precioCarrito {
+  display: flex;
+}
+
+.precioCarrito h5 {
+  flex-grow: 8;
+}
+.precioCarrito p {
+  flex-grow: 4;
+}
+
+li {
+  list-style: none;
 }

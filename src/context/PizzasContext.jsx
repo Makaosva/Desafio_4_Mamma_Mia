@@ -34,19 +34,19 @@ const PizzasProvider = ({ children }) => {
     }
   };
 
-  // const increment = (i) => {
-  //   carrito[i].count++;
-  //   setCarrito([...carrito]);
-  // };
-
   const removePizzaToCard = (i) => {
-    const { count } = carrito[i];
-    if (count === 1) {
-      carrito.splice(i, 1);
+    const index = carrito.findIndex((orden) => orden.id === i.id);
+    if (index >= 0) {
+      if (carrito[index].count > 1) {
+        carrito[index].count--;
+        setCarrito([...carrito]);
+      } else {
+        const nuevoCarrito = carrito.filter((item) => item.id != i.id);
+        setCarrito(nuevoCarrito);
+      }
     } else {
-      carrito[i].count--;
+      console.log("Borrado");
     }
-    setCarrito([...carrito]);
   };
 
   const globalStates = {

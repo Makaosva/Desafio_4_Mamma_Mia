@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PizzasContext } from "../context/PizzasContext";
-import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
 
 function DetallePizzas() {
   const { pizzas, addPizzaToCard } = useContext(PizzasContext);
@@ -25,21 +25,21 @@ function DetallePizzas() {
             <hr />
             <Card.Text>{pizza.desc}</Card.Text>
             <Card.Text>Ingredientes:</Card.Text>
-            <ListGroup variant="flush">
+            <ul variant="flush">
               {pizza.ingredients.map((ingredient, i) => (
-                <ListGroup.Item key={i}>🍕 {ingredient}</ListGroup.Item>
+                <li key={i}>🍕 {ingredient}</li>
               ))}
-            </ListGroup>
+            </ul>
           </Card.Body>
           <Card.Footer className="py-3">
-            <h2 className="text-center">$ {pizza.price}</h2>
-            <Button variant="danger" onClick={() => addPizzaToCard(p)}>
+            <h2>$ {pizza.price}</h2>
+            <Button variant="danger" onClick={() => addPizzaToCard(pizza)}>
               Añadir 🛒
             </Button>
-            <Button variant="primary" onClick={() => navigate(`/`)}>
-              Volver
-            </Button>
           </Card.Footer>
+          <Button variant="primary" onClick={() => navigate(`/`)}>
+            Volver
+          </Button>
         </Col>
       </Row>
     </Card>

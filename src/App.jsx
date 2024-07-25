@@ -17,8 +17,6 @@ const App = () => {
         <Route path="/carrito" element={<Carrito />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <h1>App</h1>
-      {/* <pre>{JSON.stringify(pizzas, null, 2)}</pre> */}
     </PizzasProvider>
   );
 };
