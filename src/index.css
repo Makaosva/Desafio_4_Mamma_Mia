@@ -18,8 +18,8 @@ body {
 }
 
 .linea {
-  color: white;
-  width: 500px;
+  width: 70%;
+  margin: 10px auto;
 }
 
 .cardPizza {

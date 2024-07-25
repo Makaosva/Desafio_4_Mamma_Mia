@@ -26,16 +26,17 @@ function CardPizza() {
                 ))}
               </ul>
             </Card.Body>
-            <Card.Footer className="py-4">
-              <h3 className="text-center">$ {p.price.toLocaleString()}</h3>
+            <Card.Footer className="py-4 text-center">
+              <h3>$ {p.price.toLocaleString()}</h3>
               <Button
+                className="m-1"
                 variant="primary"
                 onClick={() => navigate(`/pizza/${p.id}`)}
               >
                 Ver Más 👀
               </Button>
               <Button
-                className="ms-2"
+                className="m-1"
                 variant="danger"
                 onClick={() => addPizzaToCard(p)}
               >
