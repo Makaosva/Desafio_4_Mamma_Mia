@@ -18,16 +18,18 @@ body {
 }
 
 .linea {
-  width: 70%;
+  width: 80%;
   margin: 10px auto;
 }
 
 .cardPizza {
-  margin: 40px 150px;
+  justify-content: center;
+  margin: 10px 80px;
 }
 
 .precioCarrito {
   display: flex;
+  align-items: center;
 }
 
 .precioCarrito h5 {
@@ -39,4 +41,18 @@ body {
 
 li {
   list-style: none;
+}
+
+.pizzadetimg {
+  max-width: 100%;
+  height: 100%;
+}
+
+.footdetpizza {
+  display: flex;
+  justify-content: space-between;
+}
+
+.botonvolver {
+  width: 50%;
 }

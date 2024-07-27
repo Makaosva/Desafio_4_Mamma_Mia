@@ -52,7 +52,6 @@ const PizzasProvider = ({ children }) => {
   const globalStates = {
     pizzas,
     carrito,
-    // increment,
     addPizzaToCard,
     removePizzaToCard,
     getPizzas,

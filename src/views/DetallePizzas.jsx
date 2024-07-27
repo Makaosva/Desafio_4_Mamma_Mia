@@ -14,12 +14,13 @@ function DetallePizzas() {
   const pizza = pizzas[pizzas.findIndex((pizzas) => pizzas.id === id)];
 
   return (
-    <Card className="p-3">
+    <Card className="p-5">
       <Row className="cardPizza g-0">
-        <Col md={4} className="p-3">
-          <Card.Img variant="start" srce={pizza.img} alt={pizza.name} />
+        <Col md={5} className="p-3">
+          <Card.Img className="pizzadetimg" src={pizza.img} fluid />
+          {/* <img src={pizza.img} alt={pizza.name} className="card-img-start" /> */}
         </Col>
-        <Col md={8} className="p-3">
+        <Col md={7} className="p-3">
           <Card.Body>
             <Card.Title className="text-capitalize">{pizza.name}</Card.Title>
             <hr />
@@ -31,16 +32,16 @@ function DetallePizzas() {
               ))}
             </ul>
           </Card.Body>
-          <Card.Footer className="py-3">
-            <h2>$ {pizza.price}</h2>
+          <Card.Footer className="py-3 footdetpizza">
+            <h2>Precio: ${pizza.price.toLocaleString()}</h2>
             <Button variant="danger" onClick={() => addPizzaToCard(pizza)}>
               Añadir 🛒
             </Button>
           </Card.Footer>
-          <Button variant="primary" onClick={() => navigate(`/`)}>
-            Volver
-          </Button>
         </Col>
+        <Button variant="primary" onClick={() => navigate(`/`)} size="lg" className="botonvolver">
+          Volver al Home
+        </Button>
       </Row>
     </Card>
   );
