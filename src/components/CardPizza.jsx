@@ -17,26 +17,28 @@ function CardPizza() {
           <Card>
             <img src={p.img} alt={p.name} className="card-img-top" />
             <Card.Body>
-              <Card.Title className="text-capitalize">{p.name}</Card.Title>
+              <Card.Title className="text-capitalize fw-bolder">
+                {p.name}
+              </Card.Title>
               <hr />
-              <Card.Text>Ingredientes:</Card.Text>
+              <Card.Text className="fw-bolder">Ingredientes:</Card.Text>
               <ul variant="flush">
                 {p.ingredients.map((ingredient, i) => (
-                  <li key={i}>🍕 {ingredient}</li>
+                  <li key={i} className="text-capitalize">🍕 {ingredient}</li>
                 ))}
               </ul>
             </Card.Body>
-            <Card.Footer className="py-4 text-center">
-              <h3>$ {p.price.toLocaleString()}</h3>
+            <Card.Footer className="py-4 text-center ">
+              <h3 className="fw-bolder pb-2">$ {p.price.toLocaleString()}</h3>
               <Button
-                className="m-1"
+                className="m-1 btn-sm"
                 variant="primary"
                 onClick={() => navigate(`/pizza/${p.id}`)}
               >
                 Ver Más 👀
               </Button>
               <Button
-                className="m-1"
+                className="m-1 btn-sm"
                 variant="danger"
                 onClick={() => addPizzaToCard(p)}
               >

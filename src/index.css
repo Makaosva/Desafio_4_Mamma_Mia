@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .bannerHome {
@@ -37,6 +38,7 @@ body {
 }
 .precioCarrito p {
   flex-grow: 4;
+  color: green;
 }
 
 li {

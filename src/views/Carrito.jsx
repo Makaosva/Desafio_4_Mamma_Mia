@@ -36,7 +36,7 @@ function Carrito() {
                 </Col>
                 <Col md={9} className="precioCarrito">
                   <h5 className="text-capitalize">{item.name}</h5>
-                  <p className="text-end">${item.price.toLocaleString()}</p>
+                  <p className="text-end m-0">${item.price.toLocaleString()}</p>
                 </Col>
                 <Col md={2}>
                   <InputGroup className="text-end">

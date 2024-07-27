@@ -28,7 +28,7 @@ function DetallePizzas() {
             <Card.Text>Ingredientes:</Card.Text>
             <ul variant="flush">
               {pizza.ingredients.map((ingredient, i) => (
-                <li key={i}>🍕 {ingredient}</li>
+                <li className="text-capitalize" key={i}>🍕 {ingredient}</li>
               ))}
             </ul>
           </Card.Body>
@@ -39,7 +39,7 @@ function DetallePizzas() {
             </Button>
           </Card.Footer>
         </Col>
-        <Button variant="primary" onClick={() => navigate(`/`)} size="lg" className="botonvolver">
+        <Button variant="primary" onClick={() => navigate(`/`)} size="lg" className="botonvolver mt-5">
           Volver al Home
         </Button>
       </Row>
