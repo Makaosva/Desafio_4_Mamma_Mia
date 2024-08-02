@@ -11,11 +11,12 @@ function CardPizza() {
   //   console.log("pizza Home img-->", pizzas[0].img);
 
   return (
-    <Row className="cardPizza">
+    <Row className="cardPizza pt-4">
       {pizzas.map((p, index) => (
         <Col key={index} md={3} className="p-3">
           <Card>
-            <img src={p.img} alt={p.name} className="card-img-top" />
+          <Card.Img className="pizzadetimg" src={p.img} fluid />
+            {/* <img src={p.img} alt={p.name} className="card-img-top" /> */}
             <Card.Body>
               <Card.Title className="text-capitalize fw-bolder">
                 {p.name}

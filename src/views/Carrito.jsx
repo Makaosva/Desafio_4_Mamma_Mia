@@ -25,11 +25,11 @@ function Carrito() {
 
   return (
     <>
-      <Container className="mt-5">
+      <Container className="carrito">
         <h5>Detalles del Pedido:</h5>
-        <ListGroup variant="flush" className="m-3">
+        <ListGroup variant="flush">
           {carrito.map((item, i) => (
-            <ListGroup.Item key={i}>
+            <ListGroup.Item key={i} className="pt-2">
               <Row>
                 <Col md={1}>
                   <img src={item.img} alt={item.name} className="img-fluid" />
@@ -66,6 +66,7 @@ function Carrito() {
           <Button variant="success" className="btn btn-primary mt-2">
             Ir a pagar
           </Button>
+          
         </div>
       </Container>
     </>

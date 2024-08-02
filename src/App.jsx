@@ -4,7 +4,6 @@ import Home from "./views/Home";
 import DetallePizzas from "./views/DetallePizzas";
 import Carrito from "./views/Carrito";
 import NotFound from "./views/NotFound";
-import "bootstrap/dist/css/bootstrap.min.css";
 import PizzasProvider from "./context/PizzasContext";
 
 const App = () => {

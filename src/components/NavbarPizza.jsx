@@ -13,9 +13,14 @@ function NavbarPizza() {
 
   console.log("carrito -->", carrito);
   console.log("total -->", totalAPagar);
-  
+
   return (
-    <Navbar bg="info" variant="primary" expand="lg" className="ps-5 pe-5">
+    <Navbar
+      bg="info"
+      variant="primary"
+      expand="lg"
+      className="ps-5 pe-5 fixed-top"
+    >
       <Navbar.Brand className=" text-white">
         <Nav.Link as={NavLink} to="/" exact className="fs-4 ps-5">
           {" "}

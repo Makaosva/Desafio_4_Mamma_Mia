@@ -14,7 +14,7 @@ function DetallePizzas() {
   const pizza = pizzas[pizzas.findIndex((pizzas) => pizzas.id === id)];
 
   return (
-    <Card className="p-5">
+    <Card className="cardDet p-5">
       <Row className="cardPizza g-0">
         <Col md={5} className="p-3">
           <Card.Img className="pizzadetimg" src={pizza.img} fluid />
@@ -28,7 +28,9 @@ function DetallePizzas() {
             <Card.Text>Ingredientes:</Card.Text>
             <ul variant="flush">
               {pizza.ingredients.map((ingredient, i) => (
-                <li className="text-capitalize" key={i}>🍕 {ingredient}</li>
+                <li className="text-capitalize" key={i}>
+                  🍕 {ingredient}
+                </li>
               ))}
             </ul>
           </Card.Body>
@@ -39,9 +41,6 @@ function DetallePizzas() {
             </Button>
           </Card.Footer>
         </Col>
-        <Button variant="primary" onClick={() => navigate(`/`)} size="lg" className="botonvolver mt-5">
-          Volver al Home
-        </Button>
       </Row>
     </Card>
   );
